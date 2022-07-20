@@ -1,0 +1,118 @@
+:root{
+   /* --primary:#26154D; */
+   --color:#3F0AA4;
+   --light:#fff;
+   --primary: #D81E5D;
+	--secondary: #8A4FFF;
+	--light: #EEE;
+	--grey: #AAA;
+	--dark: #1e2f42;
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Roboto","Poppins",sans-serif;
+}
+body{
+   background-color: var(--light);
+}
+main{
+   max-width: 1200px;
+   padding: 4rem 3rem;
+   margin: 0 auto;
+}
+main h1{
+   font-size: 3rem;
+   margin-bottom: 1rem;
+   color: var(--dark);
+}
+main p{
+   color: var(--grey);
+   margin-bottom: 1rem;
+}
+p .generator-button{
+   border: none;
+   outline: none;
+   appearance: none;
+   padding: 0 .2rem;
+}
+
+.generator-button{
+   color: var(--primary);
+   background-image: linear-gradient(to bottom,var(--primary),var(--secondary));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-weight: 700;
+   transition: .5s;
+}
+.generator-button:hover{
+   padding: 0 .6rem;
+}
+main h4{
+   color: var(--secondary);
+   font-size: 1.3rem;
+   margin-bottom: 1rem;
+   font-weight: 600;
+}
+.colors{
+   display: grid;
+   grid-template-columns: repeat(1,1fr);
+   grid-gap: 1rem;
+}
+.colors .color{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: .5rem 1rem;
+   background-color: var(--dark);
+	border-radius: 1rem;
+	transition: 0.4s ease-out;
+	border: 2px solid transparent;
+}
+.colors .color button,
+.color .color-input{
+   appearance: none;
+   outline: none;
+   border: none;
+   background:none;
+   color: #fff;
+}
+
+.color.copied{
+   border: 2px solid red;
+}
+button{
+   user-select: none;
+   cursor: pointer;
+}
+.lock-toggle{
+   opacity: .5;
+   transition: .4s linear;
+}
+.lock-toggle.is-locked{
+   opacity: 1;
+}
+.color-input{
+   text-align: center;
+}
+@media (min-width:768px) {
+   .colors{
+      grid-template-columns: repeat(2,1fr);
+   }
+}
+@media (min-width:1024px) {
+   .colors{
+      grid-template-columns: repeat(4,1fr);
+   }
+   .color{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+   }
+   .color-input{
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+   }
+}
